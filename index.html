@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102747">
+<title>GrandStay Hotel & Suites | Booking Demo</title>
+<style>
+:root{--navy:#102747;--navy2:#18385f;--gold:#d99a25;--gold2:#f5bd50;--ink:#17263d;--muted:#65748a;--paper:#f4f6fa;--card:#fff;--line:#e2e7ef;--shadow:0 12px 32px #10274712}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}button,input,select{font:inherit}
+header{height:76px;background:var(--navy);color:white;display:flex;align-items:center;justify-content:space-between;padding:0 max(5%,calc((100% - 1280px)/2));gap:22px}
+.brand{display:flex;align-items:center;gap:12px;font-family:Georgia,serif;font-size:1.65rem;font-weight:700;white-space:nowrap}.brand-mark{color:var(--gold2);font-size:2rem}.brand small{display:block;font:600 .58rem system-ui;letter-spacing:.22em;text-align:center;color:#dce5f1;margin-top:-2px}
+nav{display:flex;gap:25px;align-items:center}nav a{color:#eef3fa;text-decoration:none;font-weight:650;font-size:.92rem}nav a:hover{color:var(--gold2)}.nav-cta{border:1px solid var(--gold2);padding:10px 15px;border-radius:999px;color:var(--gold2)}
+.hero{min-height:400px;background:linear-gradient(90deg,#081b31e8 0%,#102747a8 43%,#10274710 100%),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=88') center 53%/cover;display:flex;align-items:center;color:white}
+.hero-inner{width:min(1280px,90%);margin:auto;padding:64px 0}.eyebrow{color:var(--gold2);font-size:.78rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.hero h1{font:700 clamp(2.7rem,6vw,5rem)/1.02 Georgia,serif;max-width:650px;margin:15px 0}.hero h1 em{color:var(--gold2);font-weight:500}.hero p{font-size:1.08rem;max-width:500px;color:#edf2f8;line-height:1.6}.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#142943;border:0;border-radius:11px;padding:14px 21px;font-weight:850;cursor:pointer;box-shadow:0 7px 18px #d99a2530}.primary:hover{filter:brightness(1.04);transform:translateY(-1px)}
+main{width:min(1280px,92%);margin:28px auto 55px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:26px 0 15px}.section-heading h2{font:700 1.8rem Georgia,serif;margin:0;color:var(--navy)}.section-heading p{margin:5px 0 0;color:var(--muted)}
+.booking-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}.main-panel,.summary{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.main-panel{padding:24px}.form-title{font-size:1.15rem;font-weight:850;margin:0 0 18px;color:var(--navy)}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.field label{display:block;font-size:.82rem;font-weight:800;margin-bottom:7px}.field input,.field select{width:100%;padding:13px 12px;border:1px solid #cfd8e5;border-radius:10px;background:white;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:#4776b8;box-shadow:0 0 0 3px #4776b81c}.room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}.room{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;cursor:pointer;transition:.18s;position:relative}.room:hover{transform:translateY(-3px);box-shadow:0 12px 24px #10274718}.room.selected{border:2px solid var(--gold);box-shadow:0 0 0 3px #d99a251c}.room img{display:block;width:100%;height:165px;object-fit:cover;background:#e8edf3}.room-body{padding:15px}.room h3{margin:0 0 5px;font:700 1.22rem Georgia,serif;color:var(--navy)}.room .desc{color:var(--muted);font-size:.88rem;min-height:38px;margin:0 0 12px}.price{font-size:1.35rem;font-weight:900;color:var(--navy)}.price small{font-size:.78rem;font-weight:600;color:var(--muted)}.amenities{font-size:.76rem;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.choose{width:100%;border:0;border-radius:9px;padding:11px;background:#edf2f8;color:var(--navy);font-weight:800;cursor:pointer}.room.selected .choose{background:var(--navy);color:white}.best{position:absolute;top:12px;left:12px;background:var(--gold2);color:#142943;padding:6px 10px;border-radius:99px;font-size:.72rem;font-weight:900}
+.summary{overflow:hidden;position:sticky;top:18px}.summary-head{background:var(--navy);color:white;padding:18px 20px;font-weight:850;font-size:1.1rem}.summary-body{padding:20px}.sum-room{display:flex;gap:12px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line)}.sum-room img{width:88px;height:72px;border-radius:10px;object-fit:cover}.sum-room strong{display:block;color:var(--navy)}.sum-room span{font-size:.85rem;color:var(--muted)}.sum-line{display:flex;justify-content:space-between;gap:10px;padding:10px 0;font-size:.9rem}.sum-line span:first-child{color:var(--muted)}.sum-total{display:flex;justify-content:space-between;gap:12px;background:#fff3da;padding:15px;border-radius:12px;font-weight:900;color:var(--navy);margin-top:8px}.sum-total strong{font-size:1.35rem}.ref{text-align:center;color:var(--muted);font-size:.75rem;margin:15px 0 0}.note{font-size:.76rem;color:var(--muted);line-height:1.5;text-align:center;margin:12px 0 0}.result{display:none;background:#eaf7ef;border:1px solid #b9dfc7;border-radius:12px;padding:15px;margin-top:17px;color:#174d2d}.result h3{margin:0 0 7px}.result p{margin:5px 0}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.feature{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;color:var(--navy);font-weight:800}.feature span{display:block;font-size:1.5rem;margin-bottom:5px}.feature small{display:block;color:var(--muted);font-weight:500;margin-top:3px}
+footer{background:var(--navy);color:#e9eff8;padding:30px max(5%,calc((100% - 1280px)/2));display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-brand{font:700 1.5rem Georgia,serif}.footer-brand small{display:block;font:600 .58rem system-ui;letter-spacing:.2em}.footer-note{font-size:.82rem;color:#c2cede}
+@media(max-width:950px){.booking-layout{grid-template-columns:1fr}.summary{position:static}.room-grid{grid-template-columns:repeat(2,1fr)}nav{gap:13px}}
+@media(max-width:650px){header{height:auto;padding:16px 5%;align-items:flex-start;flex-direction:column}.brand{font-size:1.4rem}nav{width:100%;overflow:auto;padding-bottom:3px}nav a{white-space:nowrap;font-size:.82rem}.hero{min-height:360px}.hero-inner{padding:48px 0}.hero h1{font-size:2.75rem}.fields{grid-template-columns:1fr}.main-panel{padding:17px}.room-grid{grid-template-columns:1fr}.room img{height:190px}.features{grid-template-columns:repeat(2,1fr)}.section-heading{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><span class="brand-mark">▥</span><div>GrandStay<small>HOTEL &amp; SUITES</small></div></div>
+ <nav><a href="#home">Home</a><a href="#rooms">Rooms</a><a href="#amenities">Amenities</a><a href="#booking">Book a stay</a><a class="nav-cta" href="#booking">Check rates ↗</a></nav>
+</header>
+<section class="hero" id="home"><div class="hero-inner">
+ <div class="eyebrow">A better kind of getaway</div><h1>Your comfortable <em>stay starts here.</em></h1>
+ <p>Unwind in thoughtfully designed rooms, enjoy warm hospitality, and make every trip feel a little more special.</p>
+ <a href="#booking"><button class="primary">Explore rooms ↓</button></a>
+</div></section>
+<main id="booking">
+ <div class="section-heading"><div><h2>Plan your stay</h2><p>Choose your dates, guests, and room to estimate your booking.</p></div></div>
+ <div class="booking-layout">
+  <section class="main-panel">
+   <h3 class="form-title">▦ &nbsp; Check availability &amp; price</h3>
+   <div class="fields">
+    <div class="field"><label for="checkin">Check-in</label><input type="date" id="checkin"></div>
+    <div class="field"><label for="checkout">Check-out</label><input type="date" id="checkout"></div>
+    <div class="field"><label for="guests">Guests</label><select id="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div>
+   </div>
+   <div class="section-heading" id="rooms"><div><h2 style="font-size:1.4rem">Choose your room</h2><p>Every stay includes comfort and complimentary Wi-Fi.</p></div></div>
+   <div class="room-grid">
+    <article class="room selected" data-room="standard" tabindex="0" role="button" aria-pressed="true">
+     <span class="best">BEST VALUE ★</span><img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85" alt="Warm, comfortable standard hotel room">
+     <div class="room-body"><h3>Standard Room</h3><p class="desc">A welcoming, comfortable room for a restful short stay.</p><div class="price">₱2,200 <small>/ night</small></div><div class="amenities">🛏 1 bed · 👤 Up to 2 · Wi-Fi</div><button class="choose" type="button">Selected ✓</button></div>
+    </article>
+    <article class="room" data-room="deluxe" tabindex="0" role="button" aria-pressed="false">
+     <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=85" alt="Bright deluxe hotel room with a city view">
+     <div class="room-body"><h3>Deluxe Room</h3><p class="desc">Extra space, a brighter outlook, and room to unwind.</p><div class="price">₱3,500 <small>/ night</small></div><div class="amenities">🛏 Queen bed · 👤 Up to 3 · Wi-Fi</div><button class="choose" type="button">Select room</button></div>
+    </article>
+    <article class="room" data-room="suite" tabindex="0" role="button" aria-pressed="false">
+     <img src="https://images.unsplash.com/photo-160060 видео?auto=format&fit=crop&w=900&q=85" alt="Spacious premium hotel suite with lounge area" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85'">
+     <div class="room-body"><h3>Executive Suite</h3><p class="desc">A spacious premium option with a separate lounge feel.</p><div class="price">₱5,200 <small>/ night</small></div><div class="amenities">🛏 King bed · 👤 Up to 4 · Wi-Fi</div><button class="choose" type="button">Select room</button></div>
+    </article>
+   </div>
+   <button class="primary" id="calculate" style="margin-top:22px;width:100%">Calculate sample booking →</button>
+   <div class="result" id="result" aria-live="polite"></div>
+   <p class="note" style="text-align:left">Demo only: availability is simulated. This page does not reserve a real hotel room or collect payment.</p>
+  </section>
+  <aside class="summary">
+   <div class="summary-head">▣ &nbsp; Booking estimate</div>
+   <div class="summary-body">
+    <div class="sum-room"><img id="summaryImage" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=300&q=80" alt=""><div><strong id="summaryName">Standard Room</strong><span id="summaryRate">₱2,200 / night</span></div></div>
+    <div class="sum-line"><span>Check-in</span><strong id="summaryIn">—</strong></div>
+    <div class="sum-line"><span>Check-out</span><strong id="summaryOut">—</strong></div>
+    <div class="sum-line"><span>Guests</span><strong id="summaryGuests">2</strong></div>
+    <div class="sum-line"><span>Nights</span><strong id="summaryNights">1</strong></div>
+    <div class="sum-line"><span>Room subtotal</span><strong id="summarySubtotal">₱2,200.00</strong></div>
+    <div class="sum-line"><span>Estimated 12% tax</span><strong id="summaryTax">₱264.00</strong></div>
+    <div class="sum-total"><span>Total estimate</span><strong id="summaryTotal">₱2,464.00</strong></div>
+    <p class="ref" id="reference">Sample estimate · not a reservation</p>
+    <p class="note">Final charges and availability would be confirmed by the hotel in a real booking system.</p>
+   </div>
+  </aside>
+ </div>
+ <section id="amenities" class="features">
+  <div class="feature"><span>♧</span>Comfort first<small>Thoughtful room details</small></div><div class="feature"><span>⌁</span>Free Wi-Fi<small>Stay connected</small></div><div class="feature"><span>☼</span>Warm service<small>Here to help</small></div><div class="feature"><span>✓</span>Easy planning<small>Clear sample pricing</small></div>
+ </section>
+</main>
+<footer><div class="footer-brand">GrandStay<small>HOTEL &amp; SUITES</small></div><div class="footer-note">A comfortable stay, wherever the journey takes you.</div><div class="footer-note">© 2026 GrandStay · Booking demo</div></footer>
+<script>
+const rooms={
+ standard:{name:"Standard Room",rate:2200,image:"https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=300&q=80",max:2},
+ deluxe:{name:"Deluxe Room",rate:3500,image:"https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=300&q=80",max:3},
+ suite:{name:"Executive Suite",rate:5200,image:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=300&q=80",max:4}
+};
+let selected="standard";
+const ci=document.getElementById("checkin"),co=document.getElementById("checkout"),guests=document.getElementById("guests");
+const money=n=>"₱"+n.toLocaleString("en-PH",{minimumFractionDigits:2,maximumFractionDigits:2});
+const localDate=d=>new Date(d+"T12:00:00");
+const dateLabel=d=>d?localDate(d).toLocaleDateString("en-PH",{year:"numeric",month:"short",day:"numeric"}):"—";
+const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());const todayStr=today.toISOString().slice(0,10);
+ci.min=todayStr;co.min=todayStr;ci.value=todayStr;const tomorrow=new Date(today);tomorrow.setDate(tomorrow.getDate()+1);co.value=tomorrow.toISOString().slice(0,10);
+function nights(){return Math.round((localDate(co.value)-localDate(ci.value))/86400000)}
+function updateSummary(){
+ const r=rooms[selected],n=Math.max(1,nights()),subtotal=r.rate*n,tax=subtotal*.12;
+ document.getElementById("summaryName").textContent=r.name;document.getElementById("summaryRate").textContent=money(r.rate)+" / night";
+ document.getElementById("summaryImage").src=r.image;document.getElementById("summaryIn").textContent=dateLabel(ci.value);
+ document.getElementById("summaryOut").textContent=dateLabel(co.value);document.getElementById("summaryGuests").textContent=guests.value;
+ document.getElementById("summaryNights").textContent=n;document.getElementById("summarySubtotal").textContent=money(subtotal);
+ document.getElementById("summaryTax").textContent=money(tax);document.getElementById("summaryTotal").textContent=money(subtotal+tax);
+}
+function chooseRoom(id){selected=id;document.querySelectorAll(".room").forEach(card=>{const active=card.dataset.room===id;card.classList.toggle("selected",active);card.setAttribute("aria-pressed",String(active));card.querySelector(".choose").textContent=active?"Selected ✓":"Select room"});updateSummary()}
+document.querySelectorAll(".room").forEach(card=>{card.addEventListener("click",()=>chooseRoom(card.dataset.room));card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();chooseRoom(card.dataset.room)}})});
+ci.addEventListener("change",()=>{co.min=ci.value;if(co.value<=ci.value){const d=localDate(ci.value);d.setDate(d.getDate()+1);co.value=d.toISOString().slice(0,10)}updateSummary()});
+co.addEventListener("change",()=>{if(co.value<=ci.value){const d=localDate(ci.value);d.setDate(d.getDate()+1);co.value=d.toISOString().slice(0,10)}updateSummary()});guests.addEventListener("change",updateSummary);
+document.getElementById("calculate").addEventListener("click",()=>{
+ const result=document.getElementById("result");result.style.display="block";
+ if(!ci.value||!co.value||nights()<1){result.textContent="Please choose a valid check-in and check-out date. Check-out must be after check-in.";return}
+ if(Number(guests.value)>rooms[selected].max){result.textContent=rooms[selected].name+" accommodates up to "+rooms[selected].max+" guests in this demo. Please select a different room or guest count.";return}
+ const r=rooms[selected],n=nights(),subtotal=r.rate*n,tax=subtotal*.12,total=subtotal+tax,ref="GS-"+Math.floor(10000+Math.random()*90000);
+ result.innerHTML="<h3>Sample booking estimate ready</h3><p>"+r.name+" · "+n+" night(s) · "+guests.value+" guest(s)</p><p>Room subtotal: <strong>"+money(subtotal)+"</strong></p><p>Estimated 12% tax: <strong>"+money(tax)+"</strong></p><p>Total estimate: <strong>"+money(total)+"</strong></p><p>Demo reference: <strong>"+ref+"</strong></p><p>This is an estimate only, not a confirmed reservation.</p>";
+ document.getElementById("reference").textContent="Demo reference: "+ref+" · Not a reservation";
+});
+updateSummary();
+</script>
+</body></html>
