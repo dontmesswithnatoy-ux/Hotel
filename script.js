@@ -4,7 +4,7 @@ const STORAGE_KEY = "grandstay_demo_bookings_v1";
 const rooms = [
  {id:"standard",name:"Standard Room",description:"A comfortable retreat with everything you need for a relaxing stay.",price:89,capacity:2,size:"28 m²",bed:"1 Queen Bed",image:"https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85"},
  {id:"deluxe",name:"Deluxe Room",description:"Extra space, a lounge corner and calming views for a little more comfort.",price:139,capacity:3,size:"36 m²",bed:"1 King Bed",image:"https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85"},
- {id:"suite",name:"Executive Suite",description:"A separate living area and premium details for an elevated getaway.",price:219,capacity:4,size:"54 m²",bed:"1 King Bed + Sofa Bed",image:"https://images.unsplash.com/photo-1611892440504-47a1d7d3e4a1?auto=format&fit=crop&w=1000&q=85"}
+ {id:"suite",name:"Executive Suite",description:"A separate living area and premium details for an elevated getaway.",price:219,capacity:4,size:"54 m²",bed:"1 King Bed + Sofa Bed",image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=85"}
 ];
 let visibleRooms=[...rooms], stayNights=1;
 const today=new Date(), localISO=d=>new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
