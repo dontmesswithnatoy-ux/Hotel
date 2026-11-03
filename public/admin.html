@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GrandStay Staff Portal</title><link rel="stylesheet" href="/style.css"></head><body>
+<header class="topbar"><a class="brand" href="/"><span class="brand-mark">G</span><span>GRANDSTAY<small>STAFF PORTAL</small></span></a><a href="/">← Back to website</a></header>
+<main class="admin-wrap">
+<section id="loginPanel" class="admin-login"><p class="eyebrow">RESTRICTED ACCESS</p><h1>Staff sign in</h1><p class="hint">Sign in to manage room inventory and guest reservations.</p><form id="loginForm" class="form-stack"><label>USERNAME<input id="username" value="admin" required></label><label>PASSWORD<input id="password" type="password" required></label><button class="primary-btn">Sign in →</button><p id="loginMessage" class="form-message"></p></form><p class="hint">Demo credentials are listed in the README. Change them before sharing the project.</p></section>
+<section id="dashboard" hidden><div class="admin-head"><div><p class="eyebrow">GRANDSTAY OPERATIONS</p><h1>Booking dashboard</h1></div><button class="danger-btn" id="logout">Sign out</button></div>
+<div class="stats-grid" id="stats"></div>
+<h2>Room inventory</h2><div id="roomsAdmin" class="admin-table"></div>
+<h2>Reservations</h2><div id="bookingsAdmin" class="admin-table"></div>
+</section></main><script src="/admin.js"></script></body></html>
